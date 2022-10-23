@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'pages#home' #this goes to a controller
   get 'about', to: 'pages#about' #another controller action called 'about'
 
-  resources :articles, only: [:show]
-  
+  resources :articles, only: [:show, :index]
+
 end
