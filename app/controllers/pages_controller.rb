@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def about #you need an erb file for this called about.html.erb
   end
+
+  def faq #you need an erb file for this called faq.html.erb
+  end 
 end
