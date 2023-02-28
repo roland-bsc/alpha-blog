@@ -7,4 +7,18 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def new
+    @article = Article.new
+  end
+
+  def create
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    if @article.save
+      flash[:notice] = "Article was created successfully." #flash helper hash for displaying messages
+      redirect_to @article # this line is a short cut to 'redirect_to article_path(@article)'
+    else
+      render 'new' #if the article instance variable value didn't get save, plase show new form again
+    end
+  end
+
 end
